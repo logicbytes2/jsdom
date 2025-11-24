@@ -1,30 +1,17 @@
-How to use the Library
-======================
+# JS-like DOM Wrapper in Python
 
-1) Start by making sure pydom.py is in your working directory.
-2) import the file into your python code ie.  import pydom
-3) open the html code into your python code
-4) Then simply use the methods as you would in javascript
+A simple Python library that mimics JavaScript DOM manipulation using BeautifulSoup.
 
-** the library isn't an exact replica of javascript's functions but it feels very familiar
+## Example Usage
 
-The code below is an example of how to use the library
-
+```python
 import pydom
-<code>
-# Load HTML
-with open("index.html", "r", encoding="utf-8") as f:
-    raw = f.read()
 
-document = pydom.Document(raw)
+html = "<html><body><nav id='nav'></nav></body></html>"
+document = Document(html)
 
-# Select an element in your html code
 nav = document.getElementById("nav")
+nav.innerHTML = "<h1>Hello World</h1>"
 
-# Modify its innerHTML
-nav.innerHTML = "<h1>Heavens above!</h1>"
+print(document.soup)
 
-# Save modified HTML
-with open("index_modified.html", "w", encoding="utf-8") as f:
-    f.write(str(document.soup))
-</code>
