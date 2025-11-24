@@ -11,7 +11,7 @@ How to use the Library
 The code below is an example of how to use the library
 
 import pydom
-
+<code>
 # Load HTML
 with open("index.html", "r", encoding="utf-8") as f:
     raw = f.read()
@@ -27,3 +27,4 @@ nav.innerHTML = "<h1>Heavens above!</h1>"
 # Save modified HTML
 with open("index_modified.html", "w", encoding="utf-8") as f:
     f.write(str(document.soup))
+</code>
